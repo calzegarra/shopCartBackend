@@ -1,0 +1,20 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+    }
+}
+
+rootProject.name = 'shoppingCart'
+
+include ':app-service'
+include ':model'
+include ':usecase'
+include ':api-rest'
+include ':jpa-repository'
+include ':jpa-repository-commons'
+project(':app-service').projectDir            = file('./applications/app-service')
+project(':model').projectDir                  = file('./domain/model')
+project(':usecase').projectDir                = file('./domain/usecase')
+project(':api-rest').projectDir               = file('./infrastructure/entry-points/api-rest')
+project(':jpa-repository').projectDir         = file('./infrastructure/driven-adapters/jpa-repository')
+project(':jpa-repository-commons').projectDir = file('./infrastructure/helpers/jpa-repository-commons')
