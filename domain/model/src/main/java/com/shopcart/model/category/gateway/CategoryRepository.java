@@ -8,6 +8,6 @@ import java.util.List;
 public interface CategoryRepository {
     Category save(Category category);
     Category findById(BigInteger id);
-    List<Category> findByExample(Category analyst);
+    List<Category> findByExample(Category console);
     List<Category> findAll();
 }
