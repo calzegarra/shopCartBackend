@@ -20,6 +20,7 @@ subprojects {
     dependencies {
         implementation("com.fasterxml.jackson.core:jackson-annotations")
         testImplementation 'org.springframework.boot:spring-boot-starter-test'
+        implementation("org.springframework:spring-tx:5.3.31")
         compileOnly "org.projectlombok:lombok:${lombokVersion}"
         annotationProcessor  "org.projectlombok:lombok:${lombokVersion}"
         testCompileOnly  "org.projectlombok:lombok:${lombokVersion}"

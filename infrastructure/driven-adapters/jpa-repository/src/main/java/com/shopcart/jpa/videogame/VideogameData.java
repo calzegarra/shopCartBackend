@@ -13,7 +13,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Column;
 import javax.persistence.Transient;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Lob;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
@@ -41,7 +40,7 @@ public class VideogameData {
     @Column(name = "titulo", length = 500, nullable = false)
     private String title;
 
-    @Column(name = "descripcion", length = 1000, nullable = false)
+    @Column(name = "descipcion", length = 1000, nullable = false)
     private String description;
 
     @Column(name = "tiene_desc", nullable = false)
@@ -52,6 +51,9 @@ public class VideogameData {
 
     @Column(name = "unidad_precio",nullable = false)
     private BigDecimal price;
+
+    @Column(name = "estado", length = 100,nullable = false)
+    private String state;
 
     @Lob
     @Column(name = "imagen",  nullable = true)
@@ -65,6 +67,10 @@ public class VideogameData {
     @Column(name = "imagen3", nullable = true)
     private byte[] image3;
 
+    @Lob
+    @Column(name = "mini_imagen", nullable = true)
+    private byte[] mini;
+
     @ManyToMany
     @JoinTable(name = "tb_videojuegos_promo", joinColumns = @JoinColumn(name = "id_videojuegos"),
             inverseJoinColumns = @JoinColumn(name = "id_promocion"))
@@ -76,7 +82,6 @@ public class VideogameData {
     private List<CategoryData> detailsCategories;
 
     @Transient
-    @OneToMany(mappedBy = "videogame")
     private List<CartItemData> listCartItems;
 
 

@@ -33,7 +33,7 @@ public class PromoData {
     @Column(name = "descuento")
     private Double discount;
 
-    @Column(name = "fecha_inicio")
+    @Column(name = "fecha_incio")
     private LocalDateTime startDate;
 
     @Column(name = "fecha_fin")

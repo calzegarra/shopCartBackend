@@ -17,7 +17,7 @@ plugins {
 
 cleanPlugin {
     modelProps {
-        whitelistedDependencies = "jackson-annotations"
+        whitelistedDependencies = "jackson-annotations,spring-tx"
     }
 }
 
