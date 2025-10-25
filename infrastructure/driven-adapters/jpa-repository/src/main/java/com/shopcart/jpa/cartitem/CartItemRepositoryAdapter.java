@@ -1,6 +1,6 @@
 package com.shopcart.jpa.cartitem;
 
-import co.com.shopcart.jpa.AdapterOperations;
+import com.shopcart.generic.AdapterOperations;
 import com.shopcart.model.cartItem.CartItem;
 import com.shopcart.model.cartItem.gateway.CartItemRepository;
 import org.reactivecommons.utils.ObjectMapper;

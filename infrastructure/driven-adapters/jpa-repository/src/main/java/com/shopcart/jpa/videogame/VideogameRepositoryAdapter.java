@@ -1,6 +1,6 @@
 package com.shopcart.jpa.videogame;
 
-import co.com.shopcart.jpa.AdapterOperations;
+import com.shopcart.generic.AdapterOperations;
 import com.shopcart.jpa.util.ConverterMapper;
 import com.shopcart.model.common.catalog.DtoCatalog;
 import com.shopcart.model.videogame.Videogame;

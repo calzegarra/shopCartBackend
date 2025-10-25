@@ -1,6 +1,6 @@
 package com.shopcart.jpa.role;
 
-import co.com.shopcart.jpa.AdapterOperations;
+import com.shopcart.generic.AdapterOperations;
 import com.shopcart.model.role.Role;
 import com.shopcart.model.role.gateway.RoleRepository;
 import org.reactivecommons.utils.ObjectMapper;

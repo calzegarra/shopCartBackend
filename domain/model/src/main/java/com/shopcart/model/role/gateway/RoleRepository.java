@@ -1,6 +1,6 @@
 package com.shopcart.model.role.gateway;
 
-import com.shopcart.model.role.Role;
+    import com.shopcart.model.role.Role;
 
 import java.math.BigInteger;
 import java.util.List;

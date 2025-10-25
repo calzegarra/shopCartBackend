@@ -1,6 +1,6 @@
 package com.shopcart.jpa.promo;
 
-import co.com.shopcart.jpa.AdapterOperations;
+import com.shopcart.generic.AdapterOperations;
 import com.shopcart.model.promo.Promotion;
 import com.shopcart.model.promo.gateway.PromoRepository;
 import org.reactivecommons.utils.ObjectMapper;

@@ -6,7 +6,7 @@ import com.shopcart.model.cart.gateway.CartRepository;
 import org.reactivecommons.utils.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import co.com.shopcart.jpa.AdapterOperations;
+import com.shopcart.generic.AdapterOperations;
 import java.math.BigInteger;
 
 @Repository

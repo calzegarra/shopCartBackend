@@ -1,5 +1,6 @@
 package com.shopcart.jpa.videogame;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.shopcart.jpa.cartitem.CartItemData;
 import com.shopcart.jpa.category.CategoryData;
 import com.shopcart.jpa.console.ConsoleData;

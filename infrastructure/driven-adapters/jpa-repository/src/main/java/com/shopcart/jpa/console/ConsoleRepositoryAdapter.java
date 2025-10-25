@@ -1,6 +1,6 @@
 package com.shopcart.jpa.console;
 
-import co.com.shopcart.jpa.AdapterOperations;
+import com.shopcart.generic.AdapterOperations;
 import com.shopcart.model.console.Console;
 import com.shopcart.model.console.gateway.ConsoleRepository;
 import org.reactivecommons.utils.ObjectMapper;

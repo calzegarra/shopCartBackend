@@ -1,6 +1,6 @@
 package com.shopcart.jpa.videogamecategory;
 
-import co.com.shopcart.jpa.AdapterOperations;
+import com.shopcart.generic.AdapterOperations;
 import com.shopcart.model.videogamecategory.VideogameCategory;
 import com.shopcart.model.videogamecategory.gateway.VideogameCategoryRepository;
 import org.reactivecommons.utils.ObjectMapper;

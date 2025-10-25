@@ -10,4 +10,6 @@ public class ConstantsMessages {
     public static final String LIST_RECORD_SUCCESS = "Se han encontrado registros. ";
     public static final String LIST_RECORD_EMPTY = "No se han encontrado ningún registro. ";
     public static final String NOT_RECORD_EXIST = "No existe ningun registro con ese Id. ";
+    public static final String USER_NOT_EXIST = "No existe ningún usuario registrado con esas credenciales." +
+            " Verifique el usuario y la contraseña. ";
 }

@@ -1,6 +1,6 @@
 package com.shopcart.jpa.category;
 
-import co.com.shopcart.jpa.AdapterOperations;
+import com.shopcart.generic.AdapterOperations;
 import com.shopcart.model.category.Category;
 import com.shopcart.model.category.gateway.CategoryRepository;
 import org.reactivecommons.utils.ObjectMapper;

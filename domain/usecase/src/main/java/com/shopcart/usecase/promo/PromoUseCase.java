@@ -92,9 +92,9 @@ public class PromoUseCase {
         responseData.setStatus(Boolean.TRUE);
         if (!list.isEmpty()) {
             responseData.setData(list);
-            responseData.setMessage(ConstantsMessages.CREATE_RECORD_SUCCESS);
+            responseData.setMessage(ConstantsMessages.LIST_RECORD_SUCCESS);
         }else {
-            responseData.setMessage(ConstantsMessages.NOT_RECORD_EXIST);
+            responseData.setMessage(ConstantsMessages.LIST_RECORD_EMPTY);
         }
         return responseData;
     }
