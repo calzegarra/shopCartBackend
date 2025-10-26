@@ -7,6 +7,7 @@ import com.shopcart.usecase.videogame.VideogameUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,6 +28,7 @@ public class VideogameService {
     private final VideogameUseCase useCase;
     private ResponseData responseData;
 
+    @PreAuthorize("hasRole('EMPLEADO')")
     @PostMapping(path = "/create")
     public ResponseData createVideogame(@Validated @RequestBody Videogame data)
             throws ShoppingCartException, IOException {
@@ -39,6 +41,7 @@ public class VideogameService {
         return responseData;
     }
 
+    @PreAuthorize("hasRole('EMPLEADO')")
     @PostMapping(path = "/update")
     public ResponseData updateVideogame(@Validated @RequestBody Videogame data)
             throws ShoppingCartException, IOException {
@@ -51,6 +54,7 @@ public class VideogameService {
         return responseData;
     }
 
+    @PreAuthorize("hasRole('EMPLEADO')")
     @GetMapping(path = "/findById/{id}")
     public ResponseData findById(@PathVariable BigInteger id) throws IOException{
          responseData = useCase.findById(id);
@@ -62,6 +66,7 @@ public class VideogameService {
         return responseData;
     }
 
+    @PreAuthorize("hasRole('EMPLEADO')")
     @GetMapping(path = "/findAll")
     public ResponseData findAll(){
         responseData = useCase.findAll();
@@ -69,6 +74,7 @@ public class VideogameService {
         return responseData;
     }
 
+    @PreAuthorize("hasRole('EMPLEADO')")
     @GetMapping(path = "/findCatalog")
     public ResponseData findCatalog(){
         responseData = useCase.findCatalog();
@@ -76,6 +82,7 @@ public class VideogameService {
         return responseData;
     }
 
+    @PreAuthorize("hasRole('EMPLEADO')")
     @GetMapping(path = "/findAllVideogames")
     public ResponseData findAllVideogames(){
         responseData = useCase.findCatalog();

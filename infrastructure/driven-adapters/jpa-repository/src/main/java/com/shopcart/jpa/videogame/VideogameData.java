@@ -58,7 +58,7 @@ public class VideogameData {
 
     @Lob
     @Column(name = "imagen",  nullable = true)
-    private String image;
+    private byte[] image;
 
     @Lob
     @Column(name = "imagen2",nullable = true)

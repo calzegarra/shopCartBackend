@@ -26,7 +26,7 @@ public class Videogame {
     private Integer stock;
     private BigDecimal price;
     private String state;
-    private String image;
+    private byte[] image;
     private byte[] image2;
     private byte[] image3;
     private byte[] mini;

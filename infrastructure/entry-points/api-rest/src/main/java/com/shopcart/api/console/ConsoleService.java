@@ -7,6 +7,7 @@ import com.shopcart.usecase.console.ConsoleUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,7 +25,7 @@ import java.math.BigInteger;
 public class ConsoleService {
     private final ConsoleUseCase useCase;
     private ResponseData responseData;
-
+    @PreAuthorize("hasRole('EMPLEADO')")
     @PostMapping(path = "/create")
     public ResponseData createConsole(@Validated @RequestBody Console data)
             throws ShoppingCartException {
@@ -36,7 +37,7 @@ public class ConsoleService {
         }
         return responseData;
     }
-
+    @PreAuthorize("hasRole('EMPLEADO')")
     @PostMapping(path = "/update")
     public ResponseData updateConsole(@Validated @RequestBody Console data)
             throws ShoppingCartException {
@@ -49,6 +50,7 @@ public class ConsoleService {
         return responseData;
     }
 
+    @PreAuthorize("hasRole('EMPLEADO')")
     @GetMapping(path = "/findById/{id}")
     public ResponseData findById(@PathVariable BigInteger id){
         responseData = useCase.findById(id);
@@ -59,8 +61,7 @@ public class ConsoleService {
         }
         return responseData;
     }
-
-
+    @PreAuthorize("hasRole('EMPLEADO')")
     @GetMapping(path = "/findAll")
     public ResponseData findAll(){
         responseData = useCase.findAll();
