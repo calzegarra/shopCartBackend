@@ -30,6 +30,9 @@ public class WebSecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .antMatchers("/api/videogame/findCatalog").permitAll()
                         .antMatchers("/api/videogame/findById/*").permitAll()
+                        .antMatchers("/api/user/create").permitAll()
+                        .antMatchers("/api/user/update").permitAll()
+                        .antMatchers("/api/user/findById/*").permitAll()
                         .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                         .antMatchers("/api/auth/**").permitAll()
                         .antMatchers("/api/videogame/**").hasRole("EMPLEADO")
