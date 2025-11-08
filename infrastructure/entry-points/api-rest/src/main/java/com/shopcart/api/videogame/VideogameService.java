@@ -74,7 +74,7 @@ public class VideogameService {
         return responseData;
     }
 
-    @PreAuthorize("hasRole('EMPLEADO')")
+
     @GetMapping(path = "/findCatalog")
     public ResponseData findCatalog(){
         responseData = useCase.findCatalog();

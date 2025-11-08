@@ -38,4 +38,22 @@ public class VideogameRepositoryAdapter extends
                 )
         ).collect(Collectors.toList());
     }
+
+    @Override
+    public DtoCatalog findItemProduct(Integer id) {
+        List<Object[]> results = repository.findItemProduct(id);
+        if (results == null || results.isEmpty()) {
+            return null;
+        }
+        Object[] obj = results.get(0);
+        return new DtoCatalog(
+                ((Number) obj[0]).intValue(),
+                ((Number) obj[1]).intValue(),
+                (String) obj[2],
+                ((Number) obj[3]).byteValue(),
+                (BigDecimal) obj[4],
+                (String) obj[5],
+                (byte[]) obj[6]
+        );
+    }
 }

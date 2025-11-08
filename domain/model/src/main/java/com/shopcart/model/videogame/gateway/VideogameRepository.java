@@ -11,4 +11,5 @@ public interface VideogameRepository {
     List<Videogame> findByExample(Videogame videogame);
     List<Videogame> findAll();
     List<DtoCatalog> findCatalogNativeManual();
+    DtoCatalog findItemProduct(Integer id);
 }

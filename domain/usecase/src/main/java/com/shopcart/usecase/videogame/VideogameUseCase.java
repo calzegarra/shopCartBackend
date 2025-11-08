@@ -62,11 +62,11 @@ public class VideogameUseCase {
                 changeAttributes(videogame);
             }
             responseData.setData(videogameRepository.save(videoNow));
-            responseData.setMessage(ConstantsMessages.CREATE_RECORD_SUCCESS);
+            responseData.setMessage(ConstantsMessages.UPDATE_RECORD_SUCCESS);
             responseData.setStatus(Boolean.TRUE);
         }else {
             responseData.setStatus(Boolean.FALSE);
-            throw new ShoppingCartException(400, ConstantsMessages.RECORD_EMPTY);
+            throw new ShoppingCartException(400, ConstantsMessages.UPDATE_RECORD_FAILED);
         }
         return responseData;
     }
@@ -82,7 +82,9 @@ public class VideogameUseCase {
         videoNow.setImage(videogame.getImage());
         videoNow.setImage2(videogame.getImage2());
         videoNow.setImage3(videogame.getImage3());
+
         videoNow.setMini(videogame.getMini());
+
         videoNow.setDetailsCategories(videogame.getDetailsCategories());
         videoNow.setDetailsPromo(videogame.getDetailsPromo());
     }

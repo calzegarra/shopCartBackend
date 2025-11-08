@@ -24,4 +24,7 @@ public class CartItem {
     private BigDecimal unitDiscount;
     private BigDecimal subtotal;
     private LocalDateTime createDate;
+    private Integer scorePoint;
+    private String comment;
+    private LocalDateTime dateComment;
 }

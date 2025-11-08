@@ -72,6 +72,10 @@ public class VideogameData {
     @Column(name = "mini_imagen", nullable = true)
     private byte[] mini;
 
+    @Lob
+    @Column(name = "archivo", nullable = true)
+    private byte[] file;
+
     @ManyToMany
     @JoinTable(name = "tb_videojuegos_promo", joinColumns = @JoinColumn(name = "id_videojuegos"),
             inverseJoinColumns = @JoinColumn(name = "id_promocion"))

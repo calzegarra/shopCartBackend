@@ -49,4 +49,15 @@ public class CartItemData {
 
     @Column(name = "fecha_registro")
     private LocalDateTime createDate;
+
+    @Column(name = "puntaje")
+    private Integer scorePoint;
+
+    @Column(name = "comentario", length = 5000, nullable = false)
+    private String comment;
+
+    @Column(name = "fecha_comentario")
+    private LocalDateTime dateComment;
+
+
 }

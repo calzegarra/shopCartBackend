@@ -9,6 +9,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -21,7 +22,7 @@ public class Cart {
     private BigInteger id;
     private User user;
     private String cartState;
-    private String total;
+    private BigDecimal total;
     private LocalDateTime createDate;
     private List<Videogame> detailsVideogames;
     @JsonIgnore

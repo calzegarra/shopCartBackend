@@ -54,11 +54,11 @@ public class PromoUseCase {
         if (promoNow != null) {
             changeAttributes(promo);
             responseData.setData(promoRepository.save(promoNow));
-            responseData.setMessage(ConstantsMessages.CREATE_RECORD_SUCCESS);
+            responseData.setMessage(ConstantsMessages.UPDATE_RECORD_SUCCESS);
             responseData.setStatus(Boolean.TRUE);
         }else {
             responseData.setStatus(Boolean.FALSE);
-            throw new ShoppingCartException(400, ConstantsMessages.RECORD_EMPTY);
+            throw new ShoppingCartException(400, ConstantsMessages.UPDATE_RECORD_FAILED);
         }
         return responseData;
     }
@@ -77,11 +77,11 @@ public class PromoUseCase {
         Promotion promo = promoRepository.findById(id);
         if (promo != null) {
             responseData.setData(promo);
-            responseData.setMessage(ConstantsMessages.CREATE_RECORD_SUCCESS);
+            responseData.setMessage(ConstantsMessages.LIST_RECORD_SUCCESS);
             responseData.setStatus(Boolean.TRUE);
         }else {
             responseData.setStatus(Boolean.FALSE);
-            responseData.setMessage(ConstantsMessages.NOT_RECORD_EXIST);
+            responseData.setMessage(ConstantsMessages.LIST_RECORD_EMPTY);
         }
         return responseData;
     }

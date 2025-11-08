@@ -54,11 +54,11 @@ public class UserUseCase {
         if (!validateObject(userNow)) {
             changeAttributes(user);
             responseData.setData(userRepository.save(userNow));
-            responseData.setMessage(ConstantsMessages.CREATE_RECORD_SUCCESS);
+            responseData.setMessage(ConstantsMessages.UPDATE_RECORD_SUCCESS);
             responseData.setStatus(Boolean.TRUE);
         }else {
             responseData.setStatus(Boolean.FALSE);
-            throw new ShoppingCartException(400, ConstantsMessages.RECORD_EMPTY);
+            throw new ShoppingCartException(400, ConstantsMessages.UPDATE_RECORD_FAILED);
         }
         return responseData;
     }

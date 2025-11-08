@@ -44,11 +44,11 @@ public class CategoryUseCase {
         if (categoryNow != null) {
             changeAttributes(category);
             responseData.setData(categoryRepository.save(categoryNow));
-            responseData.setMessage(ConstantsMessages.CREATE_RECORD_SUCCESS);
+            responseData.setMessage(ConstantsMessages.UPDATE_RECORD_SUCCESS);
             responseData.setStatus(Boolean.TRUE);
         }else {
             responseData.setStatus(Boolean.FALSE);
-            throw new ShoppingCartException(400, ConstantsMessages.RECORD_EMPTY);
+            throw new ShoppingCartException(400, ConstantsMessages.UPDATE_RECORD_FAILED);
         }
         return responseData;
     }
@@ -63,11 +63,11 @@ public class CategoryUseCase {
         Category category = categoryRepository.findById(id);
         if (category != null) {
             responseData.setData(category);
-            responseData.setMessage(ConstantsMessages.CREATE_RECORD_SUCCESS);
+            responseData.setMessage(ConstantsMessages.LIST_RECORD_SUCCESS);
             responseData.setStatus(Boolean.TRUE);
         }else {
             responseData.setStatus(Boolean.FALSE);
-            responseData.setMessage(ConstantsMessages.NOT_RECORD_EXIST);
+            responseData.setMessage(ConstantsMessages.LIST_RECORD_EMPTY);
         }
         return responseData;
     }
@@ -78,9 +78,9 @@ public class CategoryUseCase {
         responseData.setStatus(Boolean.TRUE);
         if (!list.isEmpty()) {
             responseData.setData(list);
-            responseData.setMessage(ConstantsMessages.CREATE_RECORD_SUCCESS);
+            responseData.setMessage(ConstantsMessages.LIST_RECORD_SUCCESS);
         }else {
-            responseData.setMessage(ConstantsMessages.NOT_RECORD_EXIST);
+            responseData.setMessage(ConstantsMessages.LIST_RECORD_EMPTY);
         }
         return responseData;
     }

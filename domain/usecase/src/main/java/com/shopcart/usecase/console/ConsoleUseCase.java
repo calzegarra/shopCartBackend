@@ -44,11 +44,11 @@ public class ConsoleUseCase {
         if (consoleNow != null) {
             changeAttributes(console);
             responseData.setData(consoleRepository.save(consoleNow));
-            responseData.setMessage(ConstantsMessages.CREATE_RECORD_SUCCESS);
+            responseData.setMessage(ConstantsMessages.UPDATE_RECORD_SUCCESS);
             responseData.setStatus(Boolean.TRUE);
         }else {
             responseData.setStatus(Boolean.FALSE);
-            throw new ShoppingCartException(400, ConstantsMessages.RECORD_EMPTY);
+            throw new ShoppingCartException(400, ConstantsMessages.UPDATE_RECORD_FAILED);
         }
         return responseData;
     }
@@ -63,7 +63,7 @@ public class ConsoleUseCase {
         Console console = consoleRepository.findById(id);
         if (console != null) {
             responseData.setData(console);
-            responseData.setMessage(ConstantsMessages.CREATE_RECORD_SUCCESS);
+            responseData.setMessage(ConstantsMessages.LIST_RECORD_SUCCESS);
             responseData.setStatus(Boolean.TRUE);
         }else {
             responseData.setStatus(Boolean.FALSE);
@@ -78,7 +78,7 @@ public class ConsoleUseCase {
         responseData.setStatus(Boolean.TRUE);
         if (!list.isEmpty()) {
             responseData.setData(list);
-            responseData.setMessage(ConstantsMessages.CREATE_RECORD_SUCCESS);
+            responseData.setMessage(ConstantsMessages.LIST_RECORD_SUCCESS);
         }else {
             responseData.setMessage(ConstantsMessages.NOT_RECORD_EXIST);
         }

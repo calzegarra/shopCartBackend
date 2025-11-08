@@ -30,6 +30,7 @@ public class Videogame {
     private byte[] image2;
     private byte[] image3;
     private byte[] mini;
+    private byte[] file;
     private List<Promotion> detailsPromo;
     private List<Category> detailsCategories;
 

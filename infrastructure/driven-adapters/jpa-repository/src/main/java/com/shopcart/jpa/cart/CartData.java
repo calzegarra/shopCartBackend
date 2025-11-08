@@ -17,6 +17,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.ManyToMany;
 import javax.persistence.JoinTable;
 import javax.persistence.GenerationType;
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -38,8 +39,8 @@ public class CartData {
     @Column(name = "estado_carrito", length = 50, nullable = false)
     private String cartState;
 
-    @Column(name = "total_estimado", length = 100, nullable = false)
-    private String total;
+    @Column(name = "total_estimado", nullable = true)
+    private BigDecimal total;
 
     @Column(name = "fecha_registro")
     private LocalDateTime createDate;
