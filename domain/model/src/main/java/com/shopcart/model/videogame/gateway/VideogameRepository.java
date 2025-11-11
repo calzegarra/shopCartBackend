@@ -12,4 +12,5 @@ public interface VideogameRepository {
     List<Videogame> findAll();
     List<DtoCatalog> findCatalogNativeManual();
     DtoCatalog findItemProduct(Integer id);
+    void deleteById(BigInteger id);
 }

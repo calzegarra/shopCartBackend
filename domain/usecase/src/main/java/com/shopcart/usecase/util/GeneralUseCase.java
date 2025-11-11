@@ -31,7 +31,7 @@ public class GeneralUseCase {
         return bos.toByteArray();
     }
 
-    public static byte[] createThumbnail(byte[] originalBytes, int width, int height) throws IOException {
+    public byte[] createThumbnail(byte[] originalBytes, int width, int height) throws IOException {
         // 1️⃣ Convertir el byte[] en una imagen
         ByteArrayInputStream in = new ByteArrayInputStream(originalBytes);
         BufferedImage originalImage = ImageIO.read(in);

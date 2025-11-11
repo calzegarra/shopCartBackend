@@ -95,10 +95,10 @@ public class CartUseCase {
     }
 
     private DtoPurchases prepareData(DtoBuyItems cart) {
-        DtoMyProducts myProducts = new DtoMyProducts();
         List<DtoMyProducts> details = new  ArrayList<>();
         for (DtoProductItem item :  cart.getDetailItems()) {
             DtoCatalog game = gameRepository.findItemProduct(item.getVideogameId().intValue());
+            DtoMyProducts myProducts = new DtoMyProducts();
             myProducts.setTitle(game.getTitle());
             myProducts.setAmount(item.getAmount());
             myProducts.setUnitPrice(item.getUnitPrice());

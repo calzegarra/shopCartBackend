@@ -72,7 +72,7 @@ public class VideogameUseCase {
     }
 
 
-    private void changeAttributes(Videogame videogame) {
+    private void changeAttributes(Videogame videogame) throws IOException {
         videoNow.setTitle(videogame.getTitle());
         videoNow.setDescription(videogame.getDescription());
         videoNow.setConsole(videogame.getConsole());
@@ -82,9 +82,9 @@ public class VideogameUseCase {
         videoNow.setImage(videogame.getImage());
         videoNow.setImage2(videogame.getImage2());
         videoNow.setImage3(videogame.getImage3());
-
-        videoNow.setMini(videogame.getMini());
-
+        byte[] thumbnail = generalUseCase.createThumbnail(videogame.getImage(), 248, 140);
+        videoNow.setMini(thumbnail);
+        videoNow.setFile(videogame.getFile());
         videoNow.setDetailsCategories(videogame.getDetailsCategories());
         videoNow.setDetailsPromo(videogame.getDetailsPromo());
     }

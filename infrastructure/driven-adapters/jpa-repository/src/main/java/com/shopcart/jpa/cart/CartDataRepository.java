@@ -22,6 +22,6 @@ public interface CartDataRepository extends CrudRepository<CartData, BigInteger>
     void updateTotalCart(@Param("total") BigDecimal total,@Param("id")  Integer id);
 
     @Query(value = "SELECT id_carrito, id_usuario, total_estimado, fecha_registro " +
-            "FROM futuredb.tb_carrito v WHERE id_usuario = :id_usuario", nativeQuery = true)
+            "FROM futuredb.tb_carrito v WHERE id_usuario = :id_usuario order by id_carrito desc", nativeQuery = true)
     List<Object[]> findMyCarts(@Param("id_usuario") Integer id);
 }
