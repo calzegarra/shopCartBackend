@@ -1,4 +1,4 @@
-package com.shopcart.model.common;
+package com.shopcart.model.common.chat;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,10 +9,6 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ResponseData<T> {
-
-    private T data;
-    private Boolean status;
+public class ChatRequest {
     private String message;
-    private int code;
 }

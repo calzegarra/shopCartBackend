@@ -13,7 +13,9 @@ spring:
   profiles:
     include:
     active: local   # dev o local (puedes sobreescribir por arg/env)
-
+openai:
+  api:
+    key: YOUR_OPENAI_API_KEY
 ---
 spring:
   config:

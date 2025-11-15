@@ -1,8 +1,8 @@
 package com.shopcart.api.cart;
 
-import com.shopcart.model.cart.Cart;
 import com.shopcart.model.common.ResponseData;
 import com.shopcart.model.common.exception.ShoppingCartException;
+import com.shopcart.model.common.review.DtoRequestReview;
 import com.shopcart.model.productitem.DtoBuyItems;
 import com.shopcart.usecase.cart.CartUseCase;
 import lombok.RequiredArgsConstructor;
@@ -54,4 +54,16 @@ public class CartService {
         responseData.setCode(HttpStatus.CREATED.value());
         return responseData;
     }
+
+    @PostMapping(path = "/updateReview/{id}")
+    public ResponseData updateReview(@PathVariable Integer id,@Validated @RequestBody DtoRequestReview review) {
+        responseData = useCase.updateReview(id,review);
+        if (responseData.getStatus()) {
+            responseData.setCode(HttpStatus.CREATED.value());
+        } else {
+            responseData.setCode(HttpStatus.BAD_REQUEST.value());
+        }
+        return responseData;
+    }
+
 }

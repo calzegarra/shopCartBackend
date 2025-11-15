@@ -2,6 +2,7 @@ package com.shopcart.usecase.cart;
 
 import com.shopcart.model.cart.Cart;
 import com.shopcart.model.cart.gateway.CartRepository;
+import com.shopcart.model.cartItem.CartItem;
 import com.shopcart.model.cartItem.gateway.CartItemRepository;
 import com.shopcart.model.common.ResponseData;
 import com.shopcart.model.common.catalog.DtoCatalog;
@@ -9,6 +10,7 @@ import com.shopcart.model.common.exception.ShoppingCartException;
 import com.shopcart.model.common.purchase.DtoMyCart;
 import com.shopcart.model.common.purchase.DtoMyProducts;
 import com.shopcart.model.common.purchase.DtoPurchases;
+import com.shopcart.model.common.review.DtoRequestReview;
 import com.shopcart.model.productitem.DtoBuyItems;
 import com.shopcart.model.productitem.DtoProductItem;
 import com.shopcart.model.technicalogs.gateways.ILogger;
@@ -146,6 +148,15 @@ public class CartUseCase {
         }else {
             responseData.setMessage(ConstantsMessages.NOT_RECORD_EXIST);
         }
+        return responseData;
+    }
+
+    public ResponseData updateReview(Integer id,DtoRequestReview review)  {
+        responseData = new ResponseData();
+        itemRepository.updateReview(id, review);
+        responseData.setData(review);
+        responseData.setMessage(ConstantsMessages.UPDATE_RECORD_SUCCESS);
+        responseData.setStatus(Boolean.TRUE);
         return responseData;
     }
 }

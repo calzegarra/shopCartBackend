@@ -1,18 +1,16 @@
-package com.shopcart.model.common;
+package com.shopcart.model.common.review;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ResponseData<T> {
-
-    private T data;
-    private Boolean status;
-    private String message;
-    private int code;
+public class DtoRequestReview {
+    private Integer score;
+    private String comment;
 }

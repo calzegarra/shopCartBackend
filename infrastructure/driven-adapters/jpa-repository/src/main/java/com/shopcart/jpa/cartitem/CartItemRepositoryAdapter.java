@@ -3,6 +3,7 @@ package com.shopcart.jpa.cartitem;
 import com.shopcart.generic.AdapterOperations;
 import com.shopcart.model.cartItem.CartItem;
 import com.shopcart.model.cartItem.gateway.CartItemRepository;
+import com.shopcart.model.common.review.DtoRequestReview;
 import com.shopcart.model.productitem.DtoProductItem;
 import org.reactivecommons.utils.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,5 +42,10 @@ public class CartItemRepositoryAdapter extends AdapterOperations<CartItem, CartI
                     subtotal
             );
         }
+    }
+
+    @Override
+    public void updateReview(Integer itemId, DtoRequestReview review) {
+         super.repository.updateReview(itemId, review.getScore(), review.getComment());
     }
 }
