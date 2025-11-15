@@ -22,9 +22,9 @@ spring:
     activate:
       on-profile: dev
   datasource:
-    url: jdbc:mysql://localhost:3306/futuredb?serverTimezone=UTC&useSSL=false
-    username: root
-    password: 12345
+    url: jdbc:mysql://173.249.41.159:3306/futuredb?serverTimezone=UTC&useSSL=false
+    username: remoteuser
+    password: my801521my
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:

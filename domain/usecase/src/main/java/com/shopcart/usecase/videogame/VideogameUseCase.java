@@ -27,9 +27,6 @@ public class VideogameUseCase {
     public ResponseData createVideogame(Videogame videogame) throws IOException {
         responseData = new ResponseData();
         if (!validateObject(videogame)) {
-           // videogame.setCreateDate(LocalDateTime.now());
-           // videogame.setState(Boolean.TRUE);
-          //  videogame.setCreateBy("userEmp");
             responseData.setData(videogameRepository.save(videogame));
             responseData.setMessage(ConstantsMessages.CREATE_RECORD_SUCCESS);
             responseData.setStatus(Boolean.TRUE);
@@ -84,7 +81,7 @@ public class VideogameUseCase {
         videoNow.setImage3(videogame.getImage3());
         byte[] thumbnail = generalUseCase.createThumbnail(videogame.getImage(), 248, 140);
         videoNow.setMini(thumbnail);
-        videoNow.setFile(videogame.getFile());
+            videoNow.setFile(videogame.getFile());
         videoNow.setDetailsCategories(videogame.getDetailsCategories());
         videoNow.setDetailsPromo(videogame.getDetailsPromo());
     }
@@ -93,12 +90,6 @@ public class VideogameUseCase {
     public ResponseData findById(BigInteger id) throws IOException{
         responseData = new ResponseData();
         Videogame promo = videogameRepository.findById(id);
-      /*  if(promo.getImage2() != null){
-            byte[] thumbnail = generalUseCase.createThumbnail(promo.getImage3(), 248, 140);
-            promo.setMini(thumbnail);
-            Videogame obj = videogameRepository.save(promo);
-            System.out.println("Tamaño del mini: " + promo.getMini().length);
-        }*/
         if (promo != null) {
             responseData.setData(promo);
             responseData.setMessage(ConstantsMessages.CREATE_RECORD_SUCCESS);
